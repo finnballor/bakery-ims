@@ -81,21 +81,21 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
-      'default': {
+    #   'default': {
 
-        'ENGINE': 'django.db.backends.postgresql',
+    #     'ENGINE': 'django.db.backends.postgresql',
 
-        'NAME': 'postgres',
+    #     'NAME': 'postgres',
 
-        'USER': 'postgres',
+    #     'USER': 'postgres',
 
-        'PASSWORD': 'admin123',
+    #     'PASSWORD': 'admin123',
 
-        'HOST': 'localhost',
+    #     'HOST': 'localhost',
 
-        'PORT': '5432',
+    #     'PORT': '5432',
 
-    }
+    # }
 }
 
 
@@ -148,5 +148,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-STATICFILES_DIRS = [BASE_DIR/'static',]
-STATIC_ROOT = BASE_DIR/'staticfiles'
+# STATICFILES_DIRS = [BASE_DIR/'static',]
+# STATIC_ROOT = BASE_DIR/'staticfiles'
+
+STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
